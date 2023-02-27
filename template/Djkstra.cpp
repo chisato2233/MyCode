@@ -31,14 +31,10 @@ public:
 class Djkstra {
     int INF=0x7f7f7f7f;
 public:
-    Graph g;
     vector<int> dist, vis;
     priority_queue<Graph::edge> q;
-    friend istream& operator >>(istream& cin, Djkstra& d) {
-        cin >> d.g;
-        return cin;
-    }
-    Djkstra(int n, int start): g(n), dist(n + 1, INF), vis(n + 1) {
+    Djkstra(int n, int start, Graph g):dist(n + 1, INF), vis(n + 1) {
+        priority_queue<Graph::edge> q;
         q.push(Graph::edge{start, start, 0});
         while (!q.empty()) {
             Graph::edge now = q.top();
