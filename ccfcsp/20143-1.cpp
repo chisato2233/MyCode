@@ -9,6 +9,6 @@ int main() {
         cin >> temp;
         m[temp]++;
     }
-        for (auto i : m) count += m[i.first];
+    for (auto i : m) count += m[-i.first];
     cout << count / 2;
 }
